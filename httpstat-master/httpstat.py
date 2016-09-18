@@ -39,14 +39,13 @@ curl_format = """{
 }"""
 
 https_template = """
-  DNS Lookup   TCP Connection   SSL Handshake   Server Processing   Content Transfer
-[   {a0000}  |     {a0001}    |    {a0002}    |      {a0003}      |      {a0004}     ]
-             |                |               |                   |                  |
-    namelookup:{b0000}        |               |                   |                  |
-                        connect:{b0001}       |                   |                  |
-                                    pretransfer:{b0002}           |                  |
-                                                      starttransfer:{b0003}          |
-                                                                                 total:{b0004}
+ DNS Lookup   TCP Connection   Server Processing   Content Transfer
+[   {a0000}  |     {a0001}    |      {a0003}      |      {a0004}     ]
+             |                |                   |                  |
+    namelookup:{b0000}        |                   |                  |
+                        connect:{b0001}           |                  |
+                                      starttransfer:{b0003}          |
+                                                                 total:{b0004}
 """[1:]
 
 http_template = """
@@ -221,9 +220,10 @@ def main():
     # print stat
     if url.startswith('https://'):
         template = https_template
+        print("This url begins with https://")
     else:
         template = http_template
-
+        print("This url begins with http://")
     # colorize template first line
     tpl_parts = template.split('\n')
     tpl_parts[0] = grayscale[16](tpl_parts[0])
@@ -255,6 +255,7 @@ def main():
     # speed, originally bytes per second
     show_speed = os.environ.get(ENV_SHOW_SPEED, 'false')
     show_speed = 'true' in show_speed.lower()
+    show_speed=True
     if show_speed:
         print('speed_download: {:.1f} KiB, speed_upload: {:.1f} KiB'.format(
             d['speed_download'] / 1024, d['speed_upload'] / 1024))
