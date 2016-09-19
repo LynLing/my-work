@@ -21,20 +21,12 @@ There are three ways to get `httpstat`:
 
 ## Usage
 
-Just pass a url with it:
+In the original file ,users have to type in 
 
-```bash
-python httpstat.py httpbin.org/get
-```
+HTTPSTAT_SHOW_BODY=true 
 
-By default it will write response body in a tempfile, but you can let it print out by setting `HTTPSTAT_SHOW_BODY=true`:
+to show the body of the url they typed in , but in this modified version , the body are shown automatically
 
-```bash
-HTTPSTAT_SHOW_BODY=true python httpstat.py httpbin.org/get
-```
+Also, by seting the show_spped=true, we can automatically show the down_load and up_load spped.
 
-You can pass any curl supported arguments after the url (except for `-w`, `-D`, `-o`, `-s`, `-S` which are already used by httpstat):
-
-```bash
-HTTPSTAT_SHOW_BODY=true python httpstat.py httpbin.org/post -X POST --data-urlencode "a=中文" -v
-```
+P.s Now i can use Github fluently and are trying some new things. I will update my file later. 
