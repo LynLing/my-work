@@ -206,7 +206,7 @@ def main():
     # body
     show_body = os.environ.get(ENV_SHOW_BODY, 'false')
     show_body = 'true' in show_body.lower()
-    if show_body:
+    if 1:
         body_limit = 1024
         with open(bodyf.name, 'r') as f:
             body = f.read().strip()
@@ -230,10 +230,10 @@ def main():
     template = '\n'.join(tpl_parts)
 
     def fmta(s):
-        return cyan('{:^7}'.format(str(s) + 'ms'))
+        return green('{:^7}'.format(str(s) + 'ms'))
 
     def fmtb(s):
-        return cyan('{:<7}'.format(str(s) + 'ms'))
+        return red('{:<7}'.format(str(s) + 'ms'))
 
     stat = template.format(
         # a
