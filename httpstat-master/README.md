@@ -21,6 +21,7 @@ There are three ways to get `httpstat`:
 
 ## Usage
 
+This is a file to test some website data, including the speed of DNS Lookup, TCP Connection, Server Processing,etc.
 In the original file ,users have to type in 
 
 HTTPSTAT_SHOW_BODY=true 
