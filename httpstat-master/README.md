@@ -30,3 +30,6 @@ to show the body of the url they typed in , but in this modified version , the b
 Also, by seting the show_spped=true, we can automatically show the down_load and up_load spped.
 
 P.s Now i can use Github fluently and are trying some new things. I will update my file later. 
+
+
+https://trello.com/b/qNMbRmg0/pythonprojects-option1 This is the Trello link which can show our team communication on the Internet. 
